@@ -1,0 +1,467 @@
+    /* @font-face {
+        font-family: 'inter-reg';
+        src: url(../font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+    } */
+
+@import url('fonts.googleapis.com');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif ;
+}
+
+.parent{
+    height: 90vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    border: 1px;
+    width: 500px;
+    height: 600px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card .header-index{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.card .header-index span{
+    font-size: 34px;
+    font-weight: 540;
+}
+
+.card .input{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card .input form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;; 
+}
+
+.card .input form .save{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card .input form .credential{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    padding-bottom: 10px;
+
+}
+
+.card .input form .credential input{
+    padding: 10px;
+    border-radius: 7px;
+    border-color: #00000059;
+    
+}
+
+.card .input form .credential .save{
+    padding-top: 10px;
+}
+
+.card .input form .credential button{
+    background-color: #0000FF;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.line{
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+}
+
+.other{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.other a{
+    border-radius: 8px;
+    border: #00000059 solid 1px;
+    padding: 10px;    
+    width: 100%;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+/* main course */
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "sidebar main";
+}
+
+/* sidebar */   
+
+
+nav{
+    width: 255px;
+    padding: 1em;
+    box-shadow: 1px 4px 15px black;
+    position: sticky;
+    grid-area: sidebar;
+    
+}
+
+nav .close{
+    display: none;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    height: 100%;   
+    height: calc(100vh - 55px);
+}
+
+nav ul li{
+    width: 100%;
+
+}
+
+nav ul li a:not(.edit-profile){
+    text-decoration: none;
+    display: block;
+    color: black;
+    /* background-color: blue; */
+    border: #0000FF 1px solid;
+    padding: 10px; 
+    align-items: center;
+    text-align: center;
+    border-radius: 14px;
+    transition: background-color .3s ease-in-out;
+}
+
+nav ul li a:not(.edit-profile):hover{
+    background-color: #0000FF;
+    color: white;
+}
+
+nav ul li a.active{
+    background-color: #0000FF;
+    color: white;
+}
+
+nav ul li:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    p{
+        font-weight: 600;
+        font-size: 25px;
+    }
+    .img{
+        width: 150px;
+        height: 150px;
+        background-color: grey;
+        border-radius: 50%;
+    }
+}
+
+nav ul li:last-child{
+    margin-top: auto;
+}
+
+
+/* end of sidebar */
+
+main{
+    grid-area: main;
+    margin: 1em;
+}
+
+
+/* content */
+
+main{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin: 2em;
+    width: auto;
+}
+
+
+
+.header{
+    margin: 10px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header p .toggle-btn{
+    display: none;
+}
+
+.content{
+    margin: 10px;
+    padding: 30px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 15px;
+}
+
+.content .content-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.content .content-header .add{
+    background-color: #00AC5E;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.content .content-header p:last-child{
+    text-align: end;
+}
+
+.content .content-main{
+    display: flex;
+    flex-direction: column;
+    background-color: #E4E5E8;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.content .content-main h1{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+
+.content .content-main table{
+    text-align: center;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+}
+
+.content .content-main table th{
+    background-color: #0077B6;
+    color: #f5f5f5;
+    padding: 10px;
+}
+
+.content .content-main table th:first-child{
+    background-color: #0077B6;
+    padding: 10px;
+    border-top-left-radius: 8px;
+}
+
+.content .content-main table th:last-child{
+    background-color: #0077B6;
+    padding: 10px;
+    border-top-right-radius: 8px;
+}
+
+.content .content-main table td{
+    padding: 10px;
+}
+
+.content .content-main tbody tr:nth-child(odd){
+    background-color: #f5f5f5;
+}
+
+.content .content-main tbody tr:nth-child(even){
+    background-color: #ffffff;
+}
+
+.content .content-main table .col-no{
+    width: 60px;
+    text-align: center;
+}
+
+.content .content-main table .data-value .option{
+    display: flex;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* content add */
+
+.tambahdata{
+    height: 100vh;
+}
+
+.tambahdata .isitambahdata{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.tambahdata .isitambahdata .formAdd{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+.tambahdata .isitambahdata .formAdd .input{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.tambahdata .isitambahdata .formAdd select{
+    padding: 8px;
+    height: 42px;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+}
+
+.tambahdata .isitambahdata .formAdd .input input{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tambahdata .isitambahdata .formAdd .input:last-child{
+    margin-top: auto;
+}
+
+.tambahdata .isitambahdata .formAdd .input button{
+    padding: 8px;
+    height: 42px;
+    background-color: transparent;
+    border: 1px #CA16F8 solid;
+    color: #CA16F8;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+}
+
+.tambahdata .isitambahdata .formAdd .input button:hover{
+    background-color: #CA16F8;
+    color: white;
+}
+
+.tambahdata .isitambahdata .formAdd .input input, textarea{
+    width: 300px;
+    height: 30px;
+    padding: 5px;   
+    border-radius: 5px;
+    border: 1px #ccc solid;
+    
+}
+
+
+
+
+/* end of content add */
+
+
+/* end of content */
+
+
+/* end of main course */
+
+
+
+@media (max-width: 1000px) {
+    body{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        position: fixed;
+        background-color: white;
+        height: 100vh;
+        display: none;
+    }   
+    .show{
+        display: block;
+    }
+    .header p{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .header p .toggle-btn{
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    #sidebar .close{
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    .content .content-header .add{
+        width: 15px;
+        height: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    .content .content-header .add .text{
+        display: none;
+    }
+}
