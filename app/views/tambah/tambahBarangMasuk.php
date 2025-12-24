@@ -15,7 +15,7 @@ include '../../database/database.php';
 </head>
 <body>
     <div class="tambahdata">
-        <div class="back"><a href="../dataBarang.php"><- Kembali</a></div>
+        <div class="back"><a href="#"><- Kembali</a></div>
 
         <div class="isitambahdata">
             <h1>Barang Masuk</h1>
@@ -45,14 +45,17 @@ include '../../database/database.php';
                         
                     </select>   
                 </div>
-                        
+
+                <input type="hidden" name="harga" placeholder="harga" id="harga">
+                
                 <div class="input">
                     <span>QTY</span>
-                    <input type="number" name="qty" placeholder="qty">
+                    <input type="number" name="qty" placeholder="qty" id="qty">
                 </div>
 
+
                 <div class="input">
-                    <button type="submit">Tambah</button>
+                    <button type="Button" onclick="tambahBarang()">Tambah</button>
                 </div>
 
                         
@@ -61,17 +64,36 @@ include '../../database/database.php';
             
             <div class="tableMasuk">
                 <table>
+                    <thead>
+                        <tr>
+                            <td>No</td>
+                            <td>Distributor</td>
+                            <td>Nama Barang</td>
+                            <td>QTY</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBarang">
+
+                    </tbody>
                     <tr>
-                        <td>No</td>
-                        <td>Nama</td>
-                        <td>TOTAL</td>
-                        <td>subtotal</td>
+                        <td colspan="3"><b>Total</b></td>
+                        <td id="totalQTY">14</td>
+                        <td id="totalHarga">51</td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
 
+
+
+
+
+
+
+
+<script src="../../../assets/js/script.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() { 
 
@@ -92,6 +114,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('barang').innerHTML = data;
             });
     });
+
+    document.getElementById('barang').addEventListener('change', function() {
+        console.log('change barang', this.value);  
+        let idBarang = this.value;
+        let hargaInput = document.getElementById('harga');
+
+        if(!idBarang) {
+            hargaInput.value = '';  
+            return;
+        }
+
+        fetch('../get/get_harga.php?id=' + idBarang)
+            .then(res => res.text())
+            .then(data => {
+                hargaInput.value = data; 
+            });
+    });    
 });
 </script>
 </body>

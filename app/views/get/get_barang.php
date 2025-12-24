@@ -4,15 +4,18 @@ include "../../database/database.php";
 if(empty($_GET['id'])){
     exit;
 }
+?>
 
+
+<option value="" disabled selected>Pilih Barang</option>
+<?php
 $id = intval($_GET['id']);
 
 $q = mysqli_query($conn, "SELECT id_barang, nama_barang FROM data_barang WHERE id_distributor = '$id'");
 
-while($row = mysqli_fetch_assoc($q)){
+while($row = mysqli_fetch_assoc($q)){;
     echo "<option value='{$row['id_barang']}'>{$row['nama_barang']}</option>";
 }
-
-
-
 ?>
+
+
