@@ -9,17 +9,17 @@ include '../../database/database.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../../assets/css/style.css?">
+        <link rel="stylesheet" href="../../../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Tambah Barang</title>
 </head>
 <body>
     <div class="tambahdata">
-        <div class="back"><a href="#"><- Kembali</a></div>
+        <div class="back"><a href="../barangMasuk.php"><- Kembali</a></div>
 
         <div class="isitambahdata">
             <h1>Barang Masuk</h1>
-            <div class="dataMasuk">
+            <div class="datamasuk">
                 <form action="#" method="post" class="formAdd">
                 <input type="hidden" name="action" value="addBarangMasuk">
                 <div class="input">
@@ -58,11 +58,12 @@ include '../../database/database.php';
                     <button type="Button" onclick="tambahBarang()">Tambah</button>
                 </div>
 
-                        
-                </form>
-            </div>     
+                
+                </div>     
+            </form>
             
-            <div class="tableMasuk">
+            
+            <div class="tablemasuk">
                 <table>
                     <thead>
                         <tr>
@@ -76,12 +77,16 @@ include '../../database/database.php';
                     <tbody id="tableBarang">
 
                     </tbody>
-                    <tr>
+                    <tr class="tablefooter">
                         <td colspan="3"><b>Total</b></td>
-                        <td id="totalQTY">14</td>
-                        <td id="totalHarga">51</td>
+                        <td id="totalQTY">0</td>
+                        <td id="totalHarga">0</td>
                     </tr>
                 </table>
+                
+                <div class="input">
+                    <input type="button" onclick="simpanBarangMasuk()" value="Simpan Barang Masuk">
+                </div>
             </div>
         </div>
     </div>
