@@ -25,8 +25,8 @@ Aplikasi persediaan barang berbasis web yang dirancang untuk mempermudah pencata
 
 - **Bahasa Pemrograman**: PHP
 - **Database**: MySQL / MariaDB
-- **Server**: Apache / Nginx (XAMPP / Laragon)
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap / Tailwind CSS
+- **Server**: Apache / Nginx (XAMPP)
+- **Frontend**: HTML5, CSS3, JavaScript
 
 ---
 
